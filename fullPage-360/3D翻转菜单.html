@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>3D翻转菜单</title>
+		<style type="text/css">
+			body,
+			ul {
+				padding: 0;
+				margin: 0;
+			}
+			body {background-color: #edecec;}
+			ul {
+				list-style: none;
+				
+			}
+			.box {
+				width: 544px;
+				margin: 20px auto;
+			}
+			.show li {
+				display: inline-flex;
+				margin-left: -3px;
+				background-color: #51938f;
+				box-shadow: 2px 2px 20px #478480;
+			}
+			
+			/*给第一个默认加上样式*/
+			.show li:nth-child(1) {
+				background-color: #51938f!important;
+				background-image:linear-gradient(45deg, #478480 25%, transparent 25%, transparent 75%, #478480 75%, #478480);
+				background-size: 5px 5px;
+			}
+			
+			.show li:hover {
+				background-color: mediumpurple;
+			}
+			
+			.show li a {
+				display: block;
+				padding: 10px 20px;
+				font-size: 20px;
+				text-decoration: none;
+				color: #fff;
+				position: relative;
+			}
+			
+			.show .one span{
+				background-color: #51938f!important;
+				background-image:linear-gradient(45deg, #478480 25%, transparent 25%, transparent 75%, #478480 75%, #478480);
+				background-size: 5px 5px;
+			}
+			.show .thirdD-box span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				line-height: 43px;
+				background-color: #51938f;
+				perspective: 500px;				/*这有啥用啊？*/
+				transform-style: preserve-3d;
+				transition: all .5s ease;
+				border: 2px solid #ddd;
+			}
+			
+			.show .thirdD-box .front {
+				transform: translateY(0) rotateX(0);
+			}
+			
+			.show .thirdD-box .back {
+				background-color: mediumpurple;
+				transform: translateY(21.5px) rotateX(-90deg);
+			}
+			
+			
+			.show .thirdD-box:hover .front{
+				transform: translateY(-21.5px) rotateX(90deg);
+				transition: all .5s ease;
+			}
+			.show .thirdD-box:hover .back{
+				transform:  rotateX(0) translateY(0);
+				transition: all .5s ease;
+			}
+			
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul class="show">
+				<li>
+					<a href="javascript:void(0);" class="thirdD-box one">
+						主页
+						<span class="front">主页</span>
+						<span class="back">主页</span>
+					</a>
+					
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="thirdD-box">
+						上单
+						<span class="front">上单</span>
+						<span class="back">上单</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="thirdD-box">
+						中单
+						<span class="front">中单</span>
+						<span class="back">中单</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="thirdD-box">
+						打野
+						<span class="front">打野</span>
+						<span class="back">打野</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="thirdD-box">
+						伊泽瑞尔
+						<span class="front">伊泽瑞尔</span>
+						<span class="back">伊泽瑞尔</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="thirdD-box">
+						辅助
+						<span class="front">辅助</span>
+						<span class="back">辅助</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>
